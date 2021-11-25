@@ -14,7 +14,7 @@ public class VariousVariables {
         System.out.println("Tractor:");
         System.out.println(tractor);
         System.out.println("");
-        
+
         System.out.println("And finally, a summary:");
         System.out.println(numberOfChicken);
         System.out.println(baconWeight);
