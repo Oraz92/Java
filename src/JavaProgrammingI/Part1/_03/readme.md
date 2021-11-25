@@ -1,0 +1,1 @@
+In this part, I'm learning to read information from console
