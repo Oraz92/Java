@@ -15,8 +15,16 @@ public class Factorial {
         System.out.print("Give a number: ");
         int number = Integer.parseInt(scanner.nextLine());
         int result = 1;
-        for (int i = 1; i <= number; i++) {
-            result *= i;
+        boolean flag = true;
+        while (flag) {
+            if (number == 0) {
+                break;
+            } else {
+                for (int i = 2; i <= number ; i++) {
+                    result *= i;
+                }
+                flag = false;
+            }
         }
         System.out.println("Factorial: " + result);
 
