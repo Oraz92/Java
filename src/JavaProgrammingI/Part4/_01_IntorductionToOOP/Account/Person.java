@@ -8,4 +8,14 @@ public class Person {
         this.age = 0;
         this.name = initialName;
     }
+
+    public void printPerson() {
+        System.out.println(this.name + ", age " + this.age + " years");
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person("Oraz");
+        person.printPerson();
+
+    }
 }
