@@ -31,8 +31,23 @@ public class Person {
         return this.name;
     }
 
+    public String toString() {
+        return this.name + ", age " + this.age + " years";
+    }
+
     public static void main(String[] args) {
-        Person person = new Person("Oraz");
-        person.printPerson();
+        Person pekka = new Person("Pekka");
+        Person antti = new Person("Antti");
+
+        int i = 0;
+        while (i < 30) {
+            pekka.growOlder();
+            i = i + 1;
+        }
+
+        antti.growOlder();
+
+        System.out.println(antti); // same as System.out.println(antti.toString());
+        System.out.println(pekka); // same as System.out.println(pekka.toString());
     }
 }
