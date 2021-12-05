@@ -2,16 +2,26 @@ package JavaProgrammingI.Part4._01_IntorductionToOOP.PaymentCard;
 
 public class MainProgram {
     public static void main(String[] args) {
-        PaymentCard card = new PaymentCard(10);
-        System.out.println(card);
+        PaymentCard paulsCard = new PaymentCard(20);
+        PaymentCard mattsCard = new PaymentCard(30);
 
-        card.addMoney(15);
-        System.out.println(card);
+        paulsCard.eatHeartily();
+        mattsCard.eatAffordably();
 
-        card.addMoney(10);
-        System.out.println(card);
+        System.out.println(paulsCard);
+        System.out.println(mattsCard);
 
-        card.addMoney(200);
-        System.out.println(card);
+        paulsCard.addMoney(20);
+        mattsCard.eatHeartily();
+
+        System.out.println(paulsCard);
+        System.out.println(mattsCard);
+
+        paulsCard.eatAffordably();
+        paulsCard.eatAffordably();
+        mattsCard.addMoney(50);
+
+        System.out.println(paulsCard);
+        System.out.println(mattsCard);
     }
 }
