@@ -13,9 +13,26 @@ public class Person {
         System.out.println(this.name + ", age " + this.age + " years");
     }
 
+    public void growOlder() {
+        if (this.age < 30) {
+            this.age = this.age + 1;
+        }
+    }
+
+    public int returnAge() {
+        return this.age;
+    }
+
+    public boolean isOfLegalAge() {
+        return this.age >= 18;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
     public static void main(String[] args) {
         Person person = new Person("Oraz");
         person.printPerson();
-
     }
 }
