@@ -6,8 +6,8 @@ public class Person {
     private int weight;
     private int height;
 
-    public Person(String initialName) {
-        this.age = 0;
+    public Person(String initialName, int age) {
+        this.age = age;
         this.weight = 0;
         this.height = 0;
         this.name = initialName;
@@ -53,8 +53,8 @@ public class Person {
     }
 
     public static void main(String[] args) {
-        Person pekka = new Person("Pekka");
-        Person antti = new Person("Antti");
+        Person pekka = new Person("Pekka", 30);
+        Person antti = new Person("Antti", 20);
 
         int i = 0;
         while (i < 30) {
