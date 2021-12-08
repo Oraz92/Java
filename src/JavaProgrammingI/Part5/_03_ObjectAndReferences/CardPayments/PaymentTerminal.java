@@ -1,5 +1,7 @@
 package JavaProgrammingI.Part5._03_ObjectAndReferences.CardPayments;
 
+import java.lang.reflect.Parameter;
+
 public class PaymentTerminal {
     private double money;
     private int affordableMeals;
@@ -28,6 +30,22 @@ public class PaymentTerminal {
             return payment - 4.3;
         }
         return payment;
+    }
+
+    public boolean eatAffordably(PaymentCard card) {
+        if (card.takeMoney(2.5)){
+            affordableMeals++;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean eatHeartily(PaymentCard card) {
+        if (card.takeMoney(4.3)) {
+            heartyMeals++;
+            return true;
+        }
+        return false;
     }
 
     public String toString() {
