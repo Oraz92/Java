@@ -13,6 +13,14 @@ public class Person {
         this.name = initialName;
     }
 
+    public Person(String name, int age, int height, int weight) {
+        this.name = name;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+
+
     public void setHeight(int newHeight) {
         this.height = newHeight;
     }
@@ -26,26 +34,29 @@ public class Person {
         return this.weight / (heightPerHundred * heightPerHundred);
     }
 
-    public void printPerson() {
-        System.out.println(this.name + ", age " + this.age + " years");
-    }
 
     public void growOlder() {
-        if (this.age < 30) {
-            this.age = this.age + 1;
-        }
-    }
-
-    public int returnAge() {
-        return this.age;
-    }
-
-    public boolean isOfLegalAge() {
-        return this.age >= 18;
+        this.age = this.age + 1;
     }
 
     public String getName() {
         return this.name;
+    }
+
+    public int getAge() {
+        return this.age;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    public boolean isOfLegalAge() {
+        return this.age >= 18;
     }
 
     public String toString() {
