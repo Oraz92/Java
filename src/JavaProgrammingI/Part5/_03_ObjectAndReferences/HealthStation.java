@@ -19,7 +19,7 @@ public class HealthStation {
     }
 
     public static void main(String[] args) {
-        HealthStation childrensHospital = new HealthStation();
+        /*HealthStation childrensHospital = new HealthStation();
 
         Person ethan = new Person("Ethan", 1, 110, 7);
         Person peter = new Person("Peter", 33, 176, 85);
@@ -37,7 +37,7 @@ public class HealthStation {
         childrensHospital.weigh(ethan);
 
         System.out.println("weighings performed: " + childrensHospital.weighings());
-
+*/
 
 
 
