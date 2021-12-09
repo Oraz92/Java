@@ -53,7 +53,7 @@ public class Archive {
             Archive data = new Archive(identifier, name);
             if (!archives.contains(data)) {
                 archives.add(data);
-            } 
+            }
         }
 
         System.out.println("==Items==");
