@@ -21,6 +21,13 @@ public class Apartment {
         return Math.abs(thisApartmentPrice - comparedApartmentPrice);
     }
 
+    public boolean moreExpensiveThan(Apartment compared) {
+        int thisApartmentPrice = this.pricePerSquare * this.squares;
+        int comparedApartmentPrice = compared.pricePerSquare * compared.squares;
+        return thisApartmentPrice > comparedApartmentPrice;
+    }
+
+
     public static void main(String[] args) {
         Apartment manhattanStudioApt = new Apartment(1, 16, 5500);
         Apartment atlantaTwoBedroomApt = new Apartment(2, 38, 4200);
@@ -31,6 +38,9 @@ public class Apartment {
 
         System.out.println(manhattanStudioApt.priceDifference(atlantaTwoBedroomApt));  //71600
         System.out.println(bangorThreeBedroomApt.priceDifference(atlantaTwoBedroomApt));   //35400
+
+        System.out.println(manhattanStudioApt.moreExpensiveThan(atlantaTwoBedroomApt));  // false
+        System.out.println(bangorThreeBedroomApt.moreExpensiveThan(atlantaTwoBedroomApt));   // true
 
     }
 }
