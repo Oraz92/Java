@@ -5,10 +5,15 @@ public class Book {
     private int pages;
     private int year;
 
-    public Book(String initialTitle, int initialPages, int initialYear) {
+    public Book(String initialTitle, int initialPages, int publicationYear) {
         this.title = initialTitle;
         this.pages = initialPages;
-        this.year = initialYear;
+        this.year = publicationYear;
+    }
+
+    public Book(String initialTitle, int year) {
+        this.title = initialTitle;
+        this.year = year;
     }
 
     public String getTitle() {
@@ -21,6 +26,23 @@ public class Book {
 
     public int getYear() {
         return this.year;
+    }
+
+    public boolean equals(Object compared) {
+        // if the variables are located in the same position, they are equal
+        if (this == compared) {
+            return true;
+        }
+
+        // if the compared object is not of type Book, the objects are not equal
+        // convert the object to a Book object
+        if (!(compared instanceof Book comparedBook)) {
+            return false;
+        }
+
+        // if the values of the object variables are equal, the objects are, too
+        return this.getTitle().equals(comparedBook.getTitle()) &&
+                this.getYear() == comparedBook.getYear();
     }
 
     @Override

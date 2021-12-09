@@ -5,7 +5,37 @@ import java.util.Scanner;
 
 public class MainProgram {
     public static void main(String[] args) {
+        int counter = 0;
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Book> books = new ArrayList<>();
+        while (true) {
+            System.out.print("Title: ");
+            String title = scanner.nextLine();
+            if (title.isEmpty()) {
+                break;
+            }
+            System.out.print("Publication year: ");
+            int publicationYear = Integer.parseInt(scanner.nextLine());
+            Book book = new Book(title, publicationYear);
+            if (books.contains(book)) {
+                System.out.println("The book is already on the list. Let's not add the same book again.");
+            } else {
+                books.add(book);
+                counter++;
+            }
+        }
+
+        System.out.println("Thank you! Books added:" + counter);
+
+
+
+
+
+
+
+
+
+        /*Scanner scanner = new Scanner(System.in);
         ArrayList<Book> books = new ArrayList<>();
         while (true) {
             System.out.print("Title: ");
@@ -32,6 +62,6 @@ public class MainProgram {
             for (Book book : books) {
                 System.out.println(book.getTitle());
             }
-        }
+        }*/
     }
 }
