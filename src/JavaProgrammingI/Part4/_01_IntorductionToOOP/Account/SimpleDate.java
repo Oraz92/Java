@@ -40,18 +40,25 @@ public class SimpleDate {
     }
 
     public void advance(int howManyDays) {
-        if (this.day + howManyDays < 30) {
+        /*if (this.day + howManyDays < 30) {
             this.day = this.getDay() + howManyDays;
         } else {
-            int day = (this.getDay() + howManyDays) % 30;
-            int month = (this.getDay() + howManyDays) / 30;
-            while (true) {
-                if (this.month == month && this.day == day) {
-                  break;
-                }
+            int i = 0;
+            while (i < howManyDays) {
                 advance();
+                i++;
             }
+        }*/
+        for (int i = 0; i < howManyDays; i++) {
+            advance();
         }
+    }
+
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate obj = new SimpleDate(this.getDay(), this.getMonth(), this.getYear());
+        obj.advance(days);
+        return obj;
+
     }
 
 
@@ -102,9 +109,17 @@ public class SimpleDate {
     }
 
     public static void main(String[] args) {
-        SimpleDate date = new SimpleDate(19, 12, 2021);
+        SimpleDate date = new SimpleDate(13, 2, 2015);
         System.out.println("Friday of the examined week is " + date);
-        date.advance(181);
+        date.advance(360);
         System.out.println(date);
+
+        SimpleDate newDate = date.afterNumberOfDays(7);
+        int week = 1;
+        while (week <= 7) {
+            System.out.println("Friday after " + week + " weeks is " + newDate);
+            newDate = newDate.afterNumberOfDays(7);
+            week = week + 1;
+        }
     }
 }
