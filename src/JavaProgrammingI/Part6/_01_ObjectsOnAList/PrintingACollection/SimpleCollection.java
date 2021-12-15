@@ -1,7 +1,5 @@
 package JavaProgrammingI.Part6._01_ObjectsOnAList.PrintingACollection;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.ArrayList;
 
 public class SimpleCollection {
@@ -20,8 +18,30 @@ public class SimpleCollection {
         this.countOfElements++;
     }
 
+    public String name() {
+        return this.name;
+    }
+
     public ArrayList<String> getElements() {
         return this.elements;
+    }
+
+    public String longest() {
+        if (this.elements.isEmpty()) {
+            return null;
+        }
+        String returnStr = this.elements.get(0);
+        for (String str: this.elements) {
+            if (returnStr.length() < str.length()) {
+                returnStr = str;
+            }
+        }
+        /*for (int i = 1; i < this.elements.size(); i++) {
+            if (returnStr.length() < this.elements.get(i).length()) {
+                returnStr = this.elements.get(i);
+            }
+        }*/
+        return returnStr;
     }
 
     public String toString() {
@@ -38,23 +58,14 @@ public class SimpleCollection {
 
 
     public static void main(String[] args) {
-        SimpleCollection s = new SimpleCollection("alphabet");
-        System.out.println(s);
+        SimpleCollection j = new SimpleCollection("characters");
+        System.out.println("Longest: " + j.longest());
 
-        System.out.println();
+        j.add("magneto");
+        j.add("mystique");
+        j.add("phoenix");
 
-        s.add("a");
-        System.out.println(s);
-
-        System.out.println();
-
-        s.add("b");
-        System.out.println(s);
-
-        System.out.println();
-
-        s.add("c");
-        System.out.println(s);
+        System.out.println("Longest: " + j.longest());
     }
 
 }
