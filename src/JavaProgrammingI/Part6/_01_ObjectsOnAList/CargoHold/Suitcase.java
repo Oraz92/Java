@@ -31,8 +31,15 @@ public class Suitcase {
 
     public String toString() {
         if (items.isEmpty()) {
-            return this.itemCounter + " items " + "( " + totalWeight + " kg)";
+            return "no items (0 kg)";
         }
-        return this.itemCounter + " items " + "( " + totalWeight + " kg)";
+        int counter = 0;
+        for (Item item: this.items) {
+            counter++;
+        }
+        if (counter < 2) {
+            return this.itemCounter + " item " + "(" + totalWeight + " kg)";
+        }
+        return this.itemCounter + " items " + "(" + totalWeight + " kg)";
     }
 }

@@ -8,7 +8,7 @@ public class Main {
         Item brick = new Item("brick", 4);
         Item watches = new Item("wathes", 2);
 
-        Suitcase suitcase = new Suitcase(9);
+        Suitcase suitcase = new Suitcase(8);
         System.out.println(suitcase);
 
         suitcase.addItem(book);
