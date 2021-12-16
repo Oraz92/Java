@@ -29,6 +29,12 @@ public class Hold {
         }
     }
 
+    public void printItems() {
+        for (Suitcase tempCase: suitcases) {
+            tempCase.printItems();
+        }
+    }
+
     public String toString() {
         return this.countOfSuitcases + " suitcases (" + this.totalSuitcasesWeight + " kg)";
     }

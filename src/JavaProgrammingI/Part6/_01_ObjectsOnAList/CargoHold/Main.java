@@ -19,7 +19,9 @@ public class Main {
         hold.addSuitcase(adasCase);
         hold.addSuitcase(pekkasCase);
 
-        System.out.println(hold);
+        System.out.println("The suitcases in the hold contain the following items:");
+        hold.printItems();
+        //System.out.println(hold);
        /* Item book = new Item("Lord of the rings", 2);
         Item phone = new Item("Nokia 3210", 1);
         Item brick = new Item("brick", 4);
