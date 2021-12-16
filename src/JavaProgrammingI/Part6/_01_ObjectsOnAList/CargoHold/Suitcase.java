@@ -29,6 +29,19 @@ public class Suitcase {
         }
     }
 
+    public Item heaviestItem() {
+        if (items.isEmpty()) {
+            return null;
+        }
+        Item tempItem = items.get(0);
+        for (Item item: items) {
+            if (tempItem.getWeight() < item.getWeight()) {
+                tempItem = item;
+            }
+        }
+        return tempItem;
+    }
+
     public void printItems() {
         for (Item item: this.items) {
             System.out.println(item);
