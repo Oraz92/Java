@@ -13,24 +13,30 @@ public class TextUI {
     }
 
     public void start() {
+        String word;
+        String command;
         while (true) {
             System.out.print("Command: ");
-            String command = scanner.nextLine();
+            command = scanner.nextLine();
             if (command.equals("end")) {
                 System.out.println("Bye bye!");
                 break;
             }
-            if (command.equals("add")) {
-                System.out.print("Word: ");
-                String word = scanner.nextLine();
-                System.out.print("Translation: ");
-                String translation = scanner.nextLine();
-                //SimpleDictionary sd = new SimpleDictionary();
-                //sd.add(word, translation);
-                this.dictionary.add(word, translation);
-                continue;
+            switch (command) {
+                case "add" -> {
+                    System.out.print("Word: ");
+                    word = scanner.nextLine();
+                    System.out.print("Translation: ");
+                    String translation = scanner.nextLine();
+                    this.dictionary.add(word, translation);
+                }
+                case "search" -> {
+                    System.out.print("To be translated: ");
+                    word = scanner.nextLine();
+                    System.out.print("Translation: " + this.dictionary.translate(word) + "\n");
+                }
+                default -> System.out.println("Unknown command");
             }
-            System.out.println("Unknown command");
         }
     }
 }
