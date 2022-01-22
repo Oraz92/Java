@@ -1,16 +1,33 @@
 package JavaProgrammingI.Part7._02_Algorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Sorting {
     public static void main(String[] args) {
-        int[] array = {8, 3, 7, 14, 9, 1, 2, 4, 22, 0, 11};
+        int[] arrayOfNumbers = {8, 3, 7, 14, 9, 1, 2, 4, 22, 0, 11};
+        String[] arrayOfStrings = {"oraz", "roza", "ayna", "amir"};
+        ArrayList<Integer> integers = new ArrayList<>();
+        for (int i = 10; i >= 0 ; i--) {
+            integers.add(i);
+        }
+        ArrayList<String> strings = new ArrayList<>();
+        for (int i = 10; i >= 0 ; i--) {
+            strings.add(i + "jel'sa");
+        }
 
-        System.out.println(Arrays.toString(array));
-        System.out.println();
-        sort(array);
-        System.out.println(Arrays.toString(array));
+        sort(arrayOfNumbers);
+        System.out.println(Arrays.toString(arrayOfNumbers));
 
+        sort(arrayOfStrings);
+        System.out.println(Arrays.toString(arrayOfStrings));
+
+        sortIntegers(integers);
+        System.out.println(integers);
+
+        sortStrings(strings);
+        System.out.println(strings);
     }
 
     public static int smallest(int[] array) {
@@ -52,7 +69,7 @@ public class Sorting {
         array[index2] = temp;
     }
 
-    public static void sort(int[] array) {
+    /*public static void sort(int[] array) {
         int mainIteration = 0;
         while (mainIteration < array.length - 2) {
             int firstIndexAtEachMainIteration = mainIteration + 1;
@@ -66,5 +83,30 @@ public class Sorting {
             //System.out.println(Arrays.toString(array));
             mainIteration++;
         }
+    }*/
+
+
+    // Using ready-made sorting methods
+
+
+    // Sorts an array of integers
+    public static void sort(int[] array) {
+        Arrays.sort(array);
     }
+
+    // Sorts an array of Strings
+    public static void sort(String[] array) {
+        Arrays.sort(array);
+    }
+
+    // Sorts a list of integers
+    public static void sortIntegers(ArrayList<Integer> integers) {
+        Collections.sort(integers);
+    }
+
+    // Sorts a list of strings
+    public static void sortStrings(ArrayList<String> strings) {
+        Collections.sort(strings);
+    }
+
 }
