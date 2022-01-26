@@ -17,9 +17,23 @@ public class Statictics {
 
     public int average(ArrayList<Integer> points) {
         int sum = 0;
-        for (int point : points) {
+        for (int point: points) {
             sum += point;
         }
         return sum / points.size();
+    }
+
+    public int averageForPassingGrades(ArrayList<Integer> points) {
+        int sum = 0;
+        for (int point: points) {
+            if (passingGrade(point)) {
+                sum += point;
+            }
+        }
+        return sum / points.size();
+    }
+
+    public boolean passingGrade(int grade) {
+        return grade >= 50;
     }
 }
