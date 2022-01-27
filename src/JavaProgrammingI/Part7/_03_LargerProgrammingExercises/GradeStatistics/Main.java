@@ -16,7 +16,11 @@ public class Main {
             }
             tcs.add(input);
         }
-        //System.out.println(tcs);
+        System.out.print("Point average (all): " + tcs.average() +"\n");
+        System.out.print("Point average (passing):" + tcs.averageForPassingGrades() + "\n");
+        System.out.print("Pass percentage: " + tcs.passingPercentage() + "\n");
+        System.out.println("Grade distribution: ");
+        tcs.gradeDistribution();
 
     }
 }
