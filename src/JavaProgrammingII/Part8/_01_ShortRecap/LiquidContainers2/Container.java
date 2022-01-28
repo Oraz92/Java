@@ -11,6 +11,11 @@ public class Container {
         return this.amount;
     }
 
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+
     public void add(int amount) {
         if (amount >= 100) {
             this.amount = 100;
