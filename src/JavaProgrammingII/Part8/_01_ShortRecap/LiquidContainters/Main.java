@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int limit = 100;
         int firstContainer = 0;
         int secondContainer = 0;
         String command;
