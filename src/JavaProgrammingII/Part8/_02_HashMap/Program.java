@@ -15,8 +15,6 @@ public class Program {
         printKeysWhere(hashmap, "i");
         System.out.println("---");
         printValuesOfKeysWhere(hashmap, ".e");
-        // Test your program here!
-
     }
 
     public static void printKeys(HashMap<String, String> abbreviations) {
