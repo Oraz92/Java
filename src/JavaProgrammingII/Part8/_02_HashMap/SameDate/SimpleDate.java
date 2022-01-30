@@ -1,5 +1,7 @@
 package JavaProgrammingII.Part8._02_HashMap.SameDate;
 
+import java.util.Objects;
+
 public class SimpleDate {
 
     private int day;
@@ -65,5 +67,12 @@ public class SimpleDate {
         return this.year == comparedDate.year
                 && this.month == comparedDate.month
                 && this.day == comparedDate.day;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(day);
+        result = 31 * result + Objects.hash(month, year);
+        return result;
     }
 }
