@@ -1,6 +1,5 @@
-package JavaProgrammingII.Part8._02_HashMap.VehicleRegistry;
+package JavaProgrammingII.Part8._03_SimilarityOfObjects.VehicleRegistry;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class VehicleRegistry {
