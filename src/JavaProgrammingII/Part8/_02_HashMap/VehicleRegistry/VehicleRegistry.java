@@ -12,15 +12,18 @@ public class VehicleRegistry {
     }
 
     public boolean add(LicensePlate licensePlate, String owner) {
-        if (!this.registry.containsValue(owner)) {
-            this.registry.put(licensePlate, owner);
-            return true;
+
+        for (LicensePlate lp: this.registry.keySet()) {
+            if (lp.equals(licensePlate)) {
+                return false;
+            }
         }
-        return false;
+        this.registry.put(licensePlate, owner);
+        return true;
     }
 
     public String get(LicensePlate licensePlate) {
-        return this.registry.get(licensePlate);
+        return this.registry.getOrDefault(licensePlate, null);
     }
 
     public boolean remove(LicensePlate licensePlate) {
