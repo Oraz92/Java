@@ -43,6 +43,6 @@ public class Item {
         }
 
         // If instances of objects are equal, then objects equal too
-        return this.name.equals(comparedItem.name) && this.weight == comparedItem.weight;
+        return this.name.equals(comparedItem.name);
     }
 }
