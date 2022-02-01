@@ -13,6 +13,7 @@ public class BoxWithMaxWeight extends Box {
         this.items = new ArrayList<>();
     }
 
+    @Override
     public void add(Item item) {
         int totalWeight = 0;
         for (Item iterate: this.items) {
@@ -23,6 +24,7 @@ public class BoxWithMaxWeight extends Box {
         }
     }
 
+    @Override
     public boolean isInBox(Item item) {
         return this.items.contains(item);
     }
