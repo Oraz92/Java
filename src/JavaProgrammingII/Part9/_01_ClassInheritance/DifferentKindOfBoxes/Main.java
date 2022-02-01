@@ -22,5 +22,13 @@ public class Main {
 
         System.out.println(box.isInBox(new Item("Saludo")));
         System.out.println(box.isInBox(new Item("Pirkka")));
+        //------------------------------------------------------------------
+        System.out.println();
+        MisplacingBox misplacingBox = new MisplacingBox();
+        misplacingBox.add(new Item("Saludo", 5));
+        misplacingBox.add(new Item("Pirkka", 5));
+
+        System.out.println(misplacingBox.isInBox(new Item("Saludo")));
+        System.out.println(misplacingBox.isInBox(new Item("Pirkka")));
     }
 }
