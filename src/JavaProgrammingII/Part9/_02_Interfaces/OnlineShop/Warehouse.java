@@ -1,8 +1,6 @@
 package JavaProgrammingII.Part9._02_Interfaces.OnlineShop;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Warehouse {
 
@@ -43,5 +41,9 @@ public class Warehouse {
             }
         }
         return false;
+    }
+
+    public Set<String> products() {
+        return new HashSet<>(this.productPriceList.keySet());
     }
 }
