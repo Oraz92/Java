@@ -1,8 +1,6 @@
 package JavaProgrammingII.Part9._02_Interfaces.OnlineShop;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class ShoppingCart {
 
@@ -13,8 +11,13 @@ public class ShoppingCart {
     }
 
     public void add(String product, int price) {
-        Item item = new Item(product, price);
-        this.shoppingCart.put(product, item);
+        if (this.shoppingCart.containsKey(product)) { // if product already in a shopping cat, just increase quantity
+            Item item = this.shoppingCart.get(product);
+            item.increaseQuantity();
+        } else {
+            Item item = new Item(product, price); // else, new product will be added to cart, quantity = 1
+            this.shoppingCart.put(product, item);
+        }
     }
 
     public int price() {
@@ -24,7 +27,6 @@ public class ShoppingCart {
         }
         return price;
     }
-
     public void print() {
         for (Item item: this.shoppingCart.values()) {
             System.out.println(item);
