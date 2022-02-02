@@ -9,13 +9,26 @@ public class Item {
     private int unitPrice;
 
     public Item(String product, int quantity, int unitPrice) {
-        this.product = product;
+        this(product, unitPrice);
+        //this.product = product;
+        //this.unitPrice = unitPrice;
         this.quantity = quantity;
+    }
+
+    public Item(String product, int unitPrice) {
+        this.product = product;
         this.unitPrice = unitPrice;
     }
 
     public int price() {
-        return this.quantity * this.unitPrice;
+        return getQuantity() * this.unitPrice;
+    }
+
+    public int getQuantity() {
+        if (this.quantity == 0) {
+            return 1;
+        }
+        return this.quantity;
     }
 
     public void increaseQuantity() {
