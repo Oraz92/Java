@@ -10,25 +10,17 @@ public class Item {
 
     public Item(String product, int quantity, int unitPrice) {
         this(product, unitPrice);
-        //this.product = product;
-        //this.unitPrice = unitPrice;
         this.quantity = quantity;
     }
 
     public Item(String product, int unitPrice) {
         this.product = product;
         this.unitPrice = unitPrice;
+        this.quantity = 1;
     }
 
     public int price() {
-        return getQuantity() * this.unitPrice;
-    }
-
-    public int getQuantity() {
-        if (this.quantity == 0) {
-            return 1;
-        }
-        return this.quantity;
+        return this.quantity * this.unitPrice;
     }
 
     public void increaseQuantity() {
