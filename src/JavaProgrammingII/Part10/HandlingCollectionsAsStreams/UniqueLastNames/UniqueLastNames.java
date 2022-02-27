@@ -14,7 +14,6 @@ public class UniqueLastNames {
         ArrayList<Person> people = new ArrayList<>();
         while (true) {
             System.out.println("Continue personal information input? \"quit\" ends, space to continue:");
-            System.out.println("Continue personal information input? \"quit\" ends, space to continue:");
             String command = scanner.nextLine();
             if (command.equals("quit")) {
                 break;
