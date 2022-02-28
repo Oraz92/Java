@@ -7,10 +7,13 @@ public class Main {
         Item book = new Item("Lord of the rings", 2);
         Item phone = new Item("Nokia 3210", 1);
         Item brick = new Item("brick", 4);
+        Item powerBank = new Item("Power Bank", 6);
 
         Suitcase adasCase = new Suitcase(10);
         adasCase.addItem(book);
         adasCase.addItem(phone);
+        adasCase.addItem(powerBank);
+        System.out.println(adasCase.heaviestItem());
 
         Suitcase pekkasCase = new Suitcase(10);
         pekkasCase.addItem(brick);

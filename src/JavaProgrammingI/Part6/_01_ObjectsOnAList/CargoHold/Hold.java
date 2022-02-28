@@ -16,10 +16,22 @@ public class Hold {
     }
 
     public void addSuitcase(Suitcase suitcase) {
+        /*
         int checkSuitcasesWeight = 0;
         for (Suitcase tempSuitcase: this.suitcases) {
             checkSuitcasesWeight += tempSuitcase.totalWeight(); // Counting sum of all suitcases weight
-        }
+        }*/
+
+        // Alternative using stream methods with lambda expressions
+        /*int checkSuitcasesWeight = (int) this.suitcases.stream()
+                .map(tempSuitcase -> tempSuitcase.totalWeight())
+                .reduce(0, (previousSum, tempSuitcase) -> previousSum + tempSuitcase);*/
+
+        // Alternative using stream methods with method references
+        int checkSuitcasesWeight = this.suitcases.stream()
+                .map(Suitcase::totalWeight)
+                .reduce(0, Integer::sum);
+
         this.totalSuitcasesWeight = checkSuitcasesWeight + suitcase.totalWeight(); // all suitcases weight + adding suitcase's weight
         if (this.totalSuitcasesWeight <= this.maxWeight) {
             suitcases.add(suitcase);
@@ -30,9 +42,12 @@ public class Hold {
     }
 
     public void printItems() {
-        for (Suitcase tempCase: suitcases) {
+        suitcases.forEach(Suitcase::printItems);
+        // suitcases.stream().forEach(suitcase -> suitcase.printItems());
+
+        /*for (Suitcase tempCase: suitcases) {
             tempCase.printItems();
-        }
+        }*/
     }
 
     public String toString() {

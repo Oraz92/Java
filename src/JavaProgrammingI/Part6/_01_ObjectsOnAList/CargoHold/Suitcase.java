@@ -1,6 +1,9 @@
 package JavaProgrammingI.Part6._01_ObjectsOnAList.CargoHold;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 public class Suitcase {
     private ArrayList<Item> items;
@@ -16,10 +19,16 @@ public class Suitcase {
     }
 
     public void addItem(Item item) {
-        int checkWeight = 0;
+        int checkWeight = items.stream().map(Item::getWeight)
+                .reduce(0, Integer::sum);
+
+        /*int checkWeight = items.stream().map(i -> i.getWeight())
+                .reduce(0, (previousSum, value) -> previousSum + value);*/
+
+        /*int checkWeight = 0;
         for (Item i: items) {
             checkWeight += i.getWeight(); // Counting sum of all items weight
-        }
+        }*/
         this.totalWeight = checkWeight + item.getWeight(); // all items weight + adding item's weight
         if (this.totalWeight <= this.maxTotalWeight) {
             items.add(item);
@@ -33,19 +42,23 @@ public class Suitcase {
         if (items.isEmpty()) {
             return null;
         }
-        Item tempItem = items.get(0);
+        return items.stream().max(Comparator.comparing(Item::getWeight)).get();
+        /*Item tempItem = items.get(0);
         for (Item item: items) {
             if (tempItem.getWeight() < item.getWeight()) {
                 tempItem = item;
             }
         }
-        return tempItem;
+        return tempItem;*/
     }
 
     public void printItems() {
-        for (Item item: this.items) {
+        items.forEach(System.out::println);
+        // items.forEach(item -> System.out.println(item));
+        // items.stream().forEach(item -> System.out.println(item));
+        /*for (Item item: this.items) {
             System.out.println(item);
-        }
+        }*/
     }
 
     public int totalWeight() {
@@ -56,10 +69,14 @@ public class Suitcase {
         if (items.isEmpty()) {
             return "no items (0 kg)";
         }
-        int counter = 0;
-        for (Item item: this.items) {
+        int counter = items.size();
+
+        // int counter = (int) items.stream().count();
+
+        /*for (Item item: this.items) {
             counter++;
-        }
+        }*/
+
         if (counter < 2) {
             return this.itemCounter + " item " + "(" + totalWeight + " kg)";
         }
