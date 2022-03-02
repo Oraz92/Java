@@ -4,12 +4,10 @@ public class Book {
 
     private String name;
     private int ageRecommendation;
-    private int numberOfBooks;
 
     public Book(String name, int ageRecommendation) {
         this.name = name;
         this.ageRecommendation = ageRecommendation;
-        this.numberOfBooks++;
     }
 
     public String getName() {
