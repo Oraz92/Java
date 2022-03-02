@@ -17,6 +17,10 @@ public class BookShelf {
         this.booksCount++;
     }
 
+    public ArrayList<Book> getBook() {
+        return this.books;
+    }
+
     @Override
     public String toString() {
         StringBuilder tempBooks = new StringBuilder();
