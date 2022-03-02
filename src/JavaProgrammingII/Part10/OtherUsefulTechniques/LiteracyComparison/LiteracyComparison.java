@@ -27,6 +27,23 @@ public class LiteracyComparison {
 
     public static void main(String[] args) {
 
+        // What I did second, OMG
+
+        String fileRepo = "C:\\Users\\oraz_\\IdeaProjects\\Java\\src\\JavaProgrammingII\\Part10\\OtherUsefulTechniques\\LiteracyComparison\\" + "literacy.csv";
+        try {
+            Files.lines(Paths.get(fileRepo))
+                    .map(readLine -> readLine.split(","))
+                    .sorted(Comparator.comparing(rank -> rank[5]))
+                    .forEach(parts -> System.out.println(parts[3] + " (" + parts[4] + "), " + parts[2].split(" ")[1].trim() + ", " + parts[5]));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+
+
+        /*
+        // What I did first
+
         // Creating list of string list
         List<List<String>> literacyReport = new ArrayList<>();
         // putting file paths to variable fileRepo to readability of code
@@ -68,6 +85,8 @@ public class LiteracyComparison {
         // // sorting list using stream methods in alphabetical order by countries name
         literacyReport.stream().sorted((country1, country2) -> country1.get(0).compareToIgnoreCase(country2.get(0)))
                 .forEach(System.out::println);
+
+         */
     }
 
 }
