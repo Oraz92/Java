@@ -8,13 +8,6 @@ parameter string is an abbreviation of a day of the week (mon, tue, wed, thu, fr
 
 public class Checker {
     public boolean isDayOfWeek(String string) {
-        //return string.matches("^(mon|t(ue|hu)|wed|fri|s(at|un))");
-        String pattern = "^(mon|t(ue|hu)|wed|fri|s(at|un))";
-        if (string.matches(pattern)) {
-            System.out.println("The form is correct.");
-            return true;
-        }
-        System.out.println("The form is incorrect.");
-        return false;
+        return string.matches("^(mon|t(ue|hu)|wed|fri|s(at|un))");
     }
 }

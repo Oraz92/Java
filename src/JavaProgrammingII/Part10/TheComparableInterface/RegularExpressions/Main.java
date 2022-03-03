@@ -9,6 +9,10 @@ public class Main {
         String pattern = scanner.nextLine();
 
         Checker checker = new Checker();
-        System.out.println(checker.isDayOfWeek(pattern));
+        if (checker.isDayOfWeek(pattern)) {
+            System.out.println("The form is correct.");
+        } else {
+            System.out.println("The form is incorrect.");
+        }
     }
 }
