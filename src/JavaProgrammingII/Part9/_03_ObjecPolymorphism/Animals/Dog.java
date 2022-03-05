@@ -1,6 +1,6 @@
 package JavaProgrammingII.Part9._03_ObjecPolymorphism.Animals;
 
-public class Dog extends Animal implements NoiseCapable {
+public class  Dog extends Animal implements NoiseCapable {
 
 
     public Dog(String name) {
