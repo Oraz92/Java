@@ -1,0 +1,16 @@
+package JavaProgrammingII.Part11.Packages.flightControl.domain;
+
+public class Place {
+
+    private String ID;
+
+    public Place(String ID) {
+        this.ID = ID;
+    }
+
+    @Override
+    public String toString() {
+        return this.ID;
+    }
+}
+
