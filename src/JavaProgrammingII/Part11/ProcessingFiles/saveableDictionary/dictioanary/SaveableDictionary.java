@@ -73,6 +73,4 @@ public class SaveableDictionary {
             this.translations.entrySet().removeIf(entry -> entry.getValue().equals(word));
         }
     }
-
-
 }
