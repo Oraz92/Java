@@ -1,15 +1,33 @@
 package JavaProgrammingII.Part11.ProcessingFiles.saveableDictionary.dictioanary;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
+import java.util.Scanner;
 
 public class SaveableDictionary {
 
     private Map<String, String> translations;
+    private String file;
 
     public SaveableDictionary() {
         this.translations = new HashMap<>();
+    }
+
+    public SaveableDictionary(String file) {
+        this();
+        this.file = file;
+    }
+
+    public boolean load() throws IOException {
+        Scanner fileReader = new Scanner(Paths.get(this.file));
+        while (fileReader.hasNextLine()) {
+            String line = fileReader.nextLine();
+            String[] parts = line.split(":");
+            add(parts[0], parts[1]);
+        }
+        return !this.translations.isEmpty();
     }
 
     public void add(String word, String translation) {

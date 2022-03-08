@@ -1,0 +1,5 @@
+apina:monkey
+alla oleva:below
+olut:beer
+gul:flower
+kitap:book
