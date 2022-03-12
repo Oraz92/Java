@@ -1,7 +1,10 @@
 package JavaProgrammingII.Part11.ProcessingFiles.saveableDictionary.dictioanary;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -72,5 +75,17 @@ public class SaveableDictionary {
         } else if (this.translations.containsValue(word)) {
             this.translations.entrySet().removeIf(entry -> entry.getValue().equals(word));
         }
+    }
+
+    public boolean save() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(this.file);
+        int addedTranslations = 0;
+        for (Map.Entry entry : this.translations.entrySet()) {
+            writer.println(entry.getKey() + ":" + entry.getValue());
+            addedTranslations++;
+        }
+        writer.close();
+
+        return addedTranslations == this.translations.size();
     }
 }

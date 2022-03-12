@@ -7,15 +7,25 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        SaveableDictionary dictionary = new SaveableDictionary("C:\\Users\\oraz_\\IdeaProjects\\Java\\src\\JavaProgrammingII\\Part11\\ProcessingFiles\\saveableDictionary\\files\\dataBase.txt");
+        String file = "C:\\Users\\oraz_\\IdeaProjects\\Java\\src\\JavaProgrammingII\\Part11\\ProcessingFiles\\saveableDictionary\\files\\dataBase.txt";
+        SaveableDictionary dictionary = new SaveableDictionary(file);
         boolean wasSuccessful = dictionary.load();
 
-        if (wasSuccessful) {
-            System.out.println("Successfully loaded the dictionary from file");
-        }
+        dictionary.add("pychak", "knife");
+        dictionary.add("soygi", "love");
 
-        System.out.println(dictionary.translate("apina"));
-        System.out.println(dictionary.translate("ohjelmointi"));
-        System.out.println(dictionary.translate("alla oleva"));
+        //dictionary.delete("knife");
+
+        boolean successfulSave =  dictionary.save();
+
+
+
+        /*
+        kelle:head
+        el:hand
+        burn:nose
+         */
+
+
     }
 }
